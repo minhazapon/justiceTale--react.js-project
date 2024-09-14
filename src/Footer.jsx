@@ -13,7 +13,7 @@ const Footer = () => {
       <div className=" flex justify-center">
       <img className="  h-[100px]" src="https://cdn-icons-gif.flaticon.com/14251/14251503.gif" alt="" />
       </div>
-      <p className=" mt-5 font-mono text-xl text-[#2bddd4] ">MINHAZ LAW FARM</p>
+      <p className=" mt-5 font-mono text-4xl text-[#2bddd4] ">MINHAZ LAW FARM</p>
      </div>
     
   </aside>
