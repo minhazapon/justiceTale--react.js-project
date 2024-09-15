@@ -22,7 +22,6 @@ const Login = () => {
         signOn(email, password)
         .then(result => {
 		console.log(result.user)
-
         e.target.reset();
         navigate('/')
 		})
@@ -69,6 +68,9 @@ const Login = () => {
                 <p>Login with Google</p>
             </button>
         </div>
+        {
+                 navigate('/')
+            }
         <div className="flex items-center w-full my-4">
             <hr  className="w-full text-gray-400" />
             <p className="px-3 text-gray-400">OR</p>

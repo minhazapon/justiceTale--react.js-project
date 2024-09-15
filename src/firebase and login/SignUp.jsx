@@ -1,11 +1,14 @@
 import { useContext } from "react";
 import { fireContext } from "./AuthContext";
+import { useNavigate } from "react-router-dom";
 
 
 const SignUp = () => {
 
     const {createUser} = useContext(fireContext)
 
+
+    const navigate = useNavigate();
 
     const handleUp = e =>{
 
@@ -17,6 +20,8 @@ const SignUp = () => {
       createUser(email, password)
       .then(result => {
         console.log(result.user)
+        e.target.reset();
+        navigate('/')
       })
       .catch(error => {
         console.error(error)
