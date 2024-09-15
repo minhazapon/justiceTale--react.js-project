@@ -12,6 +12,8 @@ import Partners from './home files/Partners';
 import Signature from './home files/Signature';
 import Login from './firebase and login/Login';
 import SignUp from './firebase and login/SignUp';
+import AuthContext from './firebase and login/AuthContext';
+import PrivateRoute from './firebase and login/PrivateRoute';
 
 const router = createBrowserRouter([
   {
@@ -24,11 +26,11 @@ const router = createBrowserRouter([
       },
       {
         path: "/part",
-        element:  <Partners></Partners>  ,
+        element:  <PrivateRoute><Partners></Partners></PrivateRoute>   ,
       },
       {
         path: "/sign",
-        element:  <Signature></Signature>  ,
+        element:  <PrivateRoute><Signature></Signature></PrivateRoute>   ,
       },
       {
         path: "/login",
@@ -44,6 +46,12 @@ const router = createBrowserRouter([
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-       <RouterProvider router={router} />
+
+      <AuthContext>
+        
+      <RouterProvider router={router} />
+  
+      </AuthContext>
+
   </StrictMode>,
 )

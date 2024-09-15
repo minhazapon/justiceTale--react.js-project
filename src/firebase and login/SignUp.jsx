@@ -1,6 +1,30 @@
+import { useContext } from "react";
+import { fireContext } from "./AuthContext";
 
 
 const SignUp = () => {
+
+    const {createUser} = useContext(fireContext)
+
+
+    const handleUp = e =>{
+
+      e.preventDefault();
+      const email = e.target.email.value
+      const password = e.target.password.value
+      console.log(email, password)
+
+      createUser(email, password)
+      .then(result => {
+        console.log(result.user)
+      })
+      .catch(error => {
+        console.error(error)
+      })
+
+
+
+    }
 
 
     return (
@@ -13,11 +37,11 @@ const SignUp = () => {
 
  
         <h1 className="text-4xl  font-serif text-center">Sign Up</h1>
-        <form  className="space-y-6">
+        <form onSubmit={handleUp}  className="space-y-6">
             
             <div className="space-y-1 text-sm">
                 <label htmlFor="username" className="block text-gray-400">Email</label>
-                <input  placeholder="Email" className="w-full px-4 py-3 rounded-md border-gray-700 bg-white text-black focus:border-violet-400" type="email" name="email" id="" />
+                <input  placeholder="Email" name="email" className="w-full px-4 py-3 rounded-md border-gray-700 bg-white text-black focus:border-violet-400" type="email"  id="" />
             </div>
         
             <div className="space-y-1 text-sm">
