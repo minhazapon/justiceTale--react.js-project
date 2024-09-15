@@ -8,6 +8,10 @@ import {
 } from "react-router-dom";
 import Root from './Root';
 import Home from './Home';
+import Partners from './home files/Partners';
+import Signature from './home files/Signature';
+import Login from './firebase and login/Login';
+import SignUp from './firebase and login/SignUp';
 
 const router = createBrowserRouter([
   {
@@ -17,6 +21,22 @@ const router = createBrowserRouter([
       {
         path: "/",
         element: <Home></Home>  ,
+      },
+      {
+        path: "/part",
+        element:  <Partners></Partners>  ,
+      },
+      {
+        path: "/sign",
+        element:  <Signature></Signature>  ,
+      },
+      {
+        path: "/login",
+        element: <Login></Login>   ,
+      },
+      {
+        path: "/up",
+        element:  <SignUp></SignUp>  ,
       },
     ],
   },
